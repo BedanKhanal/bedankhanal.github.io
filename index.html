@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The personal and professional website of Bedan Khanal — transportation engineer, ITS specialist, and researcher.">
+  <meta name="theme-color" content="#101d2c">
+  <title>Bedan Khanal | Engineer, Researcher, Lifelong Learner</title>
+  <style>
+    :root {
+      --navy:#101d2c; --navy2:#1b2c40; --ink:#202a35; --muted:#687482;
+      --paper:#f7f8fa; --white:#fff; --gold:#c7a66a; --line:#e5e9ee;
+      --max:1120px; --shadow:0 18px 55px rgba(16,29,44,.09);
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.65}
+    a{color:inherit;text-decoration:none} .wrap{width:min(var(--max),calc(100% - 44px));margin:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(16,29,44,.96);backdrop-filter:blur(12px);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+    nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-weight:750;letter-spacing:.02em;font-size:1.05rem}.brand span{color:var(--gold)}
+    .navlinks{display:flex;align-items:center;gap:25px;font-size:.88rem;color:#dce3ea}
+    .navlinks a:hover{color:var(--gold)} .menu{display:none;background:none;border:1px solid #526174;color:#fff;border-radius:8px;padding:8px 11px}
+    .hero{background:linear-gradient(120deg,var(--navy),#20364c);color:#fff;padding:105px 0 100px;position:relative;overflow:hidden}
+    .hero:after{content:"";position:absolute;width:540px;height:540px;border:1px solid rgba(199,166,106,.22);border-radius:50%;right:-120px;top:-210px;box-shadow:0 0 0 55px rgba(199,166,106,.035),0 0 0 110px rgba(199,166,106,.025)}
+    .eyebrow{color:var(--gold);font-size:.76rem;text-transform:uppercase;letter-spacing:.19em;font-weight:700}
+    h1{font-size:clamp(2.8rem,7vw,5.6rem);line-height:1.04;letter-spacing:-.055em;margin:20px 0 18px;max-width:780px}
+    .hero p{font-size:1.13rem;color:#d5dde6;max-width:650px;margin:0 0 32px}
+    .actions{display:flex;gap:13px;flex-wrap:wrap}.btn{display:inline-flex;padding:12px 19px;border-radius:7px;font-weight:650;font-size:.9rem;transition:.2s}
+    .btn.primary{background:var(--gold);color:#142235}.btn.primary:hover{background:#d9bd8b;transform:translateY(-2px)}
+    .btn.ghost{border:1px solid #718094;color:#fff}.btn.ghost:hover{border-color:var(--gold);color:var(--gold)}
+    section{padding:86px 0}.section-head{max-width:680px;margin-bottom:36px}.section-head h2{font-size:clamp(2rem,4vw,3rem);letter-spacing:-.04em;line-height:1.15;margin:10px 0 12px;color:var(--navy)}
+    .section-head p{color:var(--muted);margin:0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--white);border:1px solid var(--line);border-radius:13px;padding:25px;box-shadow:0 4px 18px rgba(16,29,44,.025)}
+    .card .num{font-size:.75rem;color:var(--gold);font-weight:800;letter-spacing:.13em}
+    .card h3{margin:10px 0 7px;color:var(--navy);font-size:1.12rem}.card p{margin:0;color:var(--muted);font-size:.93rem}
+    .about{background:#fff}.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
+    .monogram{min-height:360px;border-radius:16px;background:linear-gradient(145deg,#1b2c40,#314b63);display:grid;place-items:center;position:relative;overflow:hidden}
+    .monogram:before,.monogram:after{content:"";position:absolute;border:1px solid rgba(199,166,106,.35);border-radius:50%;width:300px;height:300px}
+    .monogram:after{width:390px;height:390px}
+    .monogram strong{font-size:6rem;letter-spacing:-.08em;color:#fff;z-index:1}.about-copy h2{font-size:2.4rem;line-height:1.15;letter-spacing:-.04em;color:var(--navy);margin:12px 0}
+    .about-copy p{color:var(--muted)}.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.tag{font-size:.78rem;background:#f1f3f6;color:#445262;padding:7px 11px;border-radius:30px}
+    .timeline{border-left:1px solid #d9dee5;margin-left:8px;padding-left:28px;display:grid;gap:27px}
+    .item{position:relative}.item:before{content:"";position:absolute;left:-34px;top:8px;width:10px;height:10px;background:var(--gold);border:3px solid var(--paper);border-radius:50%}
+    .item h3{margin:0;color:var(--navy);font-size:1.12rem}.item .meta{color:#9a7a43;font-size:.82rem;font-weight:700}.item p{color:var(--muted);margin:5px 0 0;font-size:.93rem}
+    .dark{background:var(--navy);color:#fff}.dark .section-head h2{color:#fff}.dark .section-head p{color:#bdc8d4}
+    .dark .card{background:#1b2c40;border-color:#304257}.dark .card h3{color:#fff}.dark .card p{color:#c0cad5}
+    .personal{background:#fff}.personal-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .personal-card{min-height:190px;background:var(--paper);border:1px solid var(--line);border-radius:13px;padding:25px}
+    .personal-card h3{margin:0 0 8px;color:var(--navy)}.personal-card p{margin:0;color:var(--muted);font-size:.93rem}
+    .contact{background:#eef1f4}.contact-box{background:var(--navy);border-radius:16px;padding:48px;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .contact-box h2{font-size:2.3rem;line-height:1.15;letter-spacing:-.04em;margin:8px 0}.contact-box p{color:#c4ced9;max-width:560px}
+    footer{background:#0b1521;color:#9ba8b7;padding:25px 0;font-size:.82rem}.footer-row{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    .small-note{font-size:.78rem;color:#8a96a4;margin-top:14px}
+    @media(max-width:800px){.navlinks{display:none;position:absolute;top:76px;left:0;right:0;background:var(--navy);padding:18px 22px 24px;flex-direction:column;align-items:flex-start}.navlinks.open{display:flex}.menu{display:block}.grid{grid-template-columns:1fr 1fr}.about-grid{grid-template-columns:1fr;gap:32px}.monogram{min-height:250px}.contact-box{align-items:flex-start;flex-direction:column}}
+    @media(max-width:540px){.wrap{width:min(var(--max),calc(100% - 32px))}.hero{padding:78px 0}.grid,.personal-grid{grid-template-columns:1fr}section{padding:65px 0}.contact-box{padding:30px}.contact-box h2{font-size:1.9rem}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav aria-label="Main navigation">
+      <a class="brand" href="#home">BEDAN <span>KHANAL</span></a>
+      <button class="menu" id="menu" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
+      <div class="navlinks" id="navlinks">
+        <a href="#about">About</a><a href="#professional">Professional</a><a href="#research">Research</a>
+        <a href="#projects">Projects</a><a href="#beyond">Beyond Work</a><a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="wrap">
+      <div class="eyebrow">Personal · Professional · Curious</div>
+      <h1>Bedan Khanal</h1>
+      <p>Transportation engineer, researcher, and lifelong learner interested in building safer, smarter, and more connected transportation systems.</p>
+      <div class="actions">
+        <a class="btn primary" href="#professional">Explore my work</a>
+        <a class="btn ghost" href="#contact">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div class="monogram" aria-label="Bedan Khanal initials"><strong>BK.</strong></div>
+      <div class="about-copy">
+        <div class="eyebrow">A little about me</div>
+        <h2>Engineering ideas into real-world impact.</h2>
+        <p>I work at the intersection of transportation engineering, intelligent transportation systems, and research. My interests include transportation safety, connected technologies, traffic operations, and practical solutions that make mobility more reliable and accessible.</p>
+        <p>This website brings together my professional journey and the interests, ideas, and experiences that shape me beyond work. It is a place to share what I am learning, what I am working on, and what I find worth exploring.</p>
+        <div class="tags"><span class="tag">Transportation</span><span class="tag">Intelligent Transportation Systems</span><span class="tag">Roadway Safety</span><span class="tag">Research</span><span class="tag">Continuous Learning</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="professional">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Professional journey</div><h2>Experience built around better mobility.</h2><p>My work combines engineering practice, technical analysis, and research-driven problem solving.</p></div>
+      <div class="timeline">
+        <div class="item"><div class="meta">2025 — Present</div><h3>Transportation Engineer · AtkinsRéalis</h3><p>Contributing to transportation and intelligent transportation systems projects, including planning, design, technical analysis, and infrastructure improvements.</p></div>
+        <div class="item"><div class="meta">2019 — 2024</div><h3>Doctoral Research · Wayne State University</h3><p>Graduate research focused on transportation engineering, safety, traffic operations, and emerging transportation technologies.</p></div>
+        <div class="item"><div class="meta">Academic foundation</div><h3>Ph.D. in Civil Engineering · Wayne State University</h3><p>Doctoral education complemented by graduate and undergraduate study in civil and transportation engineering.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark" id="research">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Research & scholarship</div><h2>Questions, evidence, and better decisions.</h2><p>Research interests shaped by the belief that transportation systems can be safer and more effective when engineering decisions are informed by data.</p></div>
+      <div class="grid">
+        <article class="card"><div class="num">01 / SAFETY</div><h3>Transportation safety</h3><p>Understanding crash patterns, risk factors, and opportunities to improve roadway safety.</p></article>
+        <article class="card"><div class="num">02 / TECHNOLOGY</div><h3>Connected transportation</h3><p>Exploring connected vehicles, intelligent infrastructure, and technology-enabled operations.</p></article>
+        <article class="card"><div class="num">03 / ANALYTICS</div><h3>Data-driven methods</h3><p>Applying statistical analysis and engineering tools to make complex transportation problems more understandable.</p></article>
+      </div>
+      <p class="small-note">Publication titles, DOI links, and citation profiles can be added here after you provide the links you want displayed.</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Selected work</div><h2>Projects and areas of practice.</h2><p>A high-level overview of the work I enjoy. Project descriptions can be expanded with approved, non-confidential details.</p></div>
+      <div class="grid">
+        <article class="card"><div class="num">01</div><h3>Intelligent Transportation Systems</h3><p>ITS planning and design, communications infrastructure, field devices, and systems integration.</p></article>
+        <article class="card"><div class="num">02</div><h3>Traffic Engineering</h3><p>Traffic operations, roadway systems, signal-related analysis, and transportation technology.</p></article>
+        <article class="card"><div class="num">03</div><h3>Safety & Research</h3><p>Crash analysis, safety evaluation, research methods, and evidence-based recommendations.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="personal" id="beyond">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Beyond engineering</div><h2>A person is more than a job title.</h2><p>This is the personal side of the website — a space for interests, experiences, and ideas outside the office.</p></div>
+      <div class="personal-grid">
+        <article class="personal-card"><h3>Places & experiences</h3><p>Travel notes, places that leave an impression, and the little discoveries along the way.</p></article>
+        <article class="personal-card"><h3>Culture & roots</h3><p>Reflections on culture, traditions, and the experiences that connect people and communities.</p></article>
+        <article class="personal-card"><h3>Learning & ideas</h3><p>Books, new skills, interesting questions, and lessons picked up inside and outside work.</p></article>
+        <article class="personal-card"><h3>Notes from life</h3><p>Occasional writing about everyday observations, milestones, and things worth remembering.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="contact-box">
+        <div><div class="eyebrow">Let's connect</div><h2>Have an idea or opportunity?</h2><p>I'm always glad to connect with people working in transportation, engineering, research, and related fields.</p></div>
+        <a class="btn primary" href="mailto:YOUR_EMAIL@example.com">Email me</a>
+      </div>
+      <p class="small-note">Before publishing: replace the email placeholder and add your preferred LinkedIn, Google Scholar, ORCID, and other profile links.</p>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap footer-row"><span>© <span id="year"></span> Bedan Khanal. All rights reserved.</span><span>Built as a personal space for work, ideas, and life.</span></div></footer>
+<script>
+  const menu = document.getElementById('menu');
+  const links = document.getElementById('navlinks');
+  menu.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    menu.setAttribute('aria-expanded', String(open));
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    links.classList.remove('open'); menu.setAttribute('aria-expanded','false');
+  }));
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
